@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Promise From My Heart ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-align:center;
+    overflow:hidden;
+}
+
+.container{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    padding:40px;
+    border-radius:20px;
+    width:90%;
+    max-width:600px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    animation:fadeIn 2s ease;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+button{
+    margin-top:25px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+    background:#fff;
+    color:#ff6f91;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+#response{
+    margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* floating hearts */
+.heart{
+    position:absolute;
+    color:#fff;
+    animation:float 6s linear infinite;
+}
+@keyframes float{
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>My Promise To You 💖</h1>
+
+    <p>
+        I know life didn’t treat you gently before…  
+        But I promise, I will.  
+        <br><br>
+        I promise to stand with you, understand you,  
+        make you smile on hard days,  
+        and never make you feel alone again.
+        <br><br>
+        This is not just a proposal…  
+        This is a promise for a lifetime.
+    </p>
+
+    <h2>Will you accept my promise… and me? ❤️</h2>
+
+    <button onclick="accept()">Yes, I Do 💞</button>
+    <button onclick="think()">Need Time 😊</button>
+
+    <div id="response"></div>
+</div>
+
+<script>
+function accept(){
+    document.getElementById("response").innerHTML =
+    "You just made me the happiest person alive ❤️✨";
+}
+
+function think(){
+    document.getElementById("response").innerHTML =
+    "Take your time… My promise will still be here 💌";
+}
+
+// floating hearts
+setInterval(()=>{
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*20+15)+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+},500);
+</script>
+
+</body>
+</html>
